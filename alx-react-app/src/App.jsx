@@ -50,7 +50,7 @@ function App() {
 
       <div>
         {/* User Profile*/}
-           <UserProfile name="Alexander" age={25} bio="A passionate React learner from Ghana." />
+           <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       </div>
 
       <div>
