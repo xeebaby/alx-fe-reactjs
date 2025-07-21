@@ -1,4 +1,7 @@
 import Header from './components/Header';
+import MainContent from './components/MainContent';
+import Footer from './components/Footer';
+
 import WelcomeMessage from './components/WelcomeMessage';
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
@@ -10,6 +13,8 @@ function App() {
 
   return (
     <>
+    <Header />
+
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -19,7 +24,7 @@ function App() {
         </a>
       </div>
 
-      {/* 👇 Inserted the WelcomeMessage component here */}
+      
       <WelcomeMessage />
 
       <h1>Vite + React</h1>
@@ -31,23 +36,25 @@ function App() {
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+
+      <div>
+        {/* Main content section */}
+        <MainContent />
+
+      </div>
+
+      <div>
+        {/* footer section */}
+        <Footer />
+      </div>
+      
     </>
   )
 }
 
-function App() {
-  return (
-    <div>
-      <Header />
-      {/* other components like <WelcomeMessage /> can go here */}
-    </div>
-  );
-}
 
 export default App;
-
-export default App
-
