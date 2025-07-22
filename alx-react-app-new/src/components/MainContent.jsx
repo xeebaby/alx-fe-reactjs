@@ -2,8 +2,8 @@
 
 function MainContent() {
   return (
-   <main style={{ padding: '15px', backgroundColor: '#f4f4f4' }}>
-      <p>This is the main content of the application.</p>
+    <main style={{ padding: '15px', backgroundColor: '#f4f4f4' }}>
+      <p>I love to visit New York, Paris, and Tokyo.</p>
     </main>
   );
 }
