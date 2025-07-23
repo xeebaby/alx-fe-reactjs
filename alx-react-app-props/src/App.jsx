@@ -1,6 +1,6 @@
 // App.jsx
-import ProfilePage from './ProfilePage';
-import { UserContext } from './UserContext';  // Changed to named import
+import ProfilePage from './components/ProfilePage';
+import { UserContext } from './components/UserContext';  // Changed to named import
 
 function App() {
   const userData = { 
