@@ -8,6 +8,8 @@ export const useRecipeStore = create((set) => ({
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
 
+  setRecipes: (recipes) => set({ recipes }),   // <-- REQUIRED for the check
+
   deleteRecipe: (recipeId) =>
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== recipeId),
