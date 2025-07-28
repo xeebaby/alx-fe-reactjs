@@ -4,12 +4,14 @@ import AddRecipeForm from "./components/AddRecipeForm";
 import RecipeDetails from "./components/RecipeDetails";
 import FavoritesList from "./components/FavoritesList";
 import RecommendationsList from "./components/RecommendationsList";
+import SearchBar from "./components/SearchBar"; 
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/favorites">Favorites</Link> |{" "}
+      <nav style={{ padding: "10px", backgroundColor: "#eee" }}>
+        <Link to="/">Home</Link> |{" "}
+        <Link to="/favorites">Favorites</Link> |{" "}
         <Link to="/recommendations">Recommendations</Link>
       </nav>
 
@@ -17,8 +19,9 @@ function App() {
         <Route
           path="/"
           element={
-            <div>
+            <div style={{ padding: "20px" }}>
               <h1>Recipe Sharing App</h1>
+              <SearchBar /> {/* ✅ Search bar included */}
               <AddRecipeForm />
               <RecipeList />
             </div>

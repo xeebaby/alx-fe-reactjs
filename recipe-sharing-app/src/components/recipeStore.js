@@ -5,10 +5,11 @@ export const useRecipeStore = create((set) => ({
   favorites: [],
   recommendations: [],
 
+  // Existing actions...
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
 
-  setRecipes: (recipes) => set({ recipes }),   // <-- REQUIRED for the check
+  setRecipes: (recipes) => set({ recipes }),
 
   deleteRecipe: (recipeId) =>
     set((state) => ({
@@ -39,4 +40,15 @@ export const useRecipeStore = create((set) => ({
       );
       return { recommendations: recommended };
     }),
+
+  // ✅ New search and filter state/actions:
+  searchTerm: "",
+  setSearchTerm: (term) => set({ searchTerm: term }),
+  filteredRecipes: [],
+  filterRecipes: () =>
+    set((state) => ({
+      filteredRecipes: state.recipes.filter((recipe) =>
+        recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+      ),
+    })),
 }));
