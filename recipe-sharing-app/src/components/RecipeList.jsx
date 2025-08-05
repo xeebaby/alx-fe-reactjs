@@ -8,7 +8,7 @@ function RecipeList() {
   const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
   const filterRecipes = useRecipeStore((state) => state.filterRecipes);
 
-  // ✅ Whenever searchTerm changes, run filterRecipes
+  //  Whenever searchTerm changes, run filterRecipes
   useEffect(() => {
     filterRecipes();
   }, [searchTerm, filterRecipes]);

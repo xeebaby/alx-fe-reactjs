@@ -1,11 +1,12 @@
-import create from "zustand";
+import { create } from "zustand";
 
 export const useRecipeStore = create((set) => ({
   recipes: [],
   favorites: [],
   recommendations: [],
 
-  // Existing actions...
+  // Basic recipe managementh
+
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
 
@@ -24,6 +25,7 @@ export const useRecipeStore = create((set) => ({
       ),
     })),
 
+  // Favorites
   addFavorite: (recipeId) =>
     set((state) => ({ favorites: [...state.favorites, recipeId] })),
 
@@ -32,6 +34,7 @@ export const useRecipeStore = create((set) => ({
       favorites: state.favorites.filter((id) => id !== recipeId),
     })),
 
+  // Recommendations
   generateRecommendations: () =>
     set((state) => {
       const recommended = state.recipes.filter(
@@ -41,7 +44,7 @@ export const useRecipeStore = create((set) => ({
       return { recommendations: recommended };
     }),
 
-  // ✅ New search and filter state/actions:
+  // Search and filter
   searchTerm: "",
   setSearchTerm: (term) => set({ searchTerm: term }),
   filteredRecipes: [],

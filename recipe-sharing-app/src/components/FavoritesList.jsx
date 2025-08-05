@@ -1,5 +1,6 @@
 import { useRecipeStore } from "./recipeStore";
 
+
 function FavoritesList() {
   const recipes = useRecipeStore((state) => state.recipes);
   const favorites = useRecipeStore((state) => state.favorites);
