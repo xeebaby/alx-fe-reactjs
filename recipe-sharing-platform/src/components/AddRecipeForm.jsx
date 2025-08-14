@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const AddRecipeForm = () => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
-  const [instructions, setInstructions] = useState("");
+  const [steps, setSteps] = useState("");
   const [errors, setErrors] = useState({});
 
   // Simple validation
@@ -13,7 +13,7 @@ const AddRecipeForm = () => {
     if (!ingredients.trim()) newErrors.ingredients = "Ingredients are required.";
     else if (ingredients.split(",").length < 2)
       newErrors.ingredients = "At least two ingredients required, separated by commas.";
-    if (!instructions.trim()) newErrors.instructions = "Instructions are required.";
+    if (!steps.trim()) newErrors.steps = "Preparation steps are required.";
     return newErrors;
   };
 
@@ -31,7 +31,7 @@ const AddRecipeForm = () => {
     // Clear form
     setTitle("");
     setIngredients("");
-    setInstructions("");
+    setSteps("");
     setErrors({});
   };
 
@@ -63,16 +63,16 @@ const AddRecipeForm = () => {
           {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
         </div>
 
-        {/* Instructions */}
+        {/* Steps */}
         <div>
           <label className="block text-sm font-semibold mb-1">Preparation Steps</label>
           <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             rows={4}
             className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
           ></textarea>
-          {errors.instructions && <p className="text-red-500 text-sm mt-1">{errors.instructions}</p>}
+          {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
         </div>
 
         {/* Submit Button */}
