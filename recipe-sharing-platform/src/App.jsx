@@ -1,7 +1,12 @@
-export default function App() {
+import React from "react";
+import HomePage from "./components/HomePage";
+
+function App() {
   return (
-    <h1 className="text-4xl font-bold underline text-blue-500 p-6">
-      Tailwind is working! 🍳
-    </h1>
+    <div className="bg-gray-100 min-h-screen">
+      <HomePage />
+    </div>
   );
 }
+
+export default App;
