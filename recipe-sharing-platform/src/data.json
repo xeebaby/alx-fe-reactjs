@@ -3,24 +3,56 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/300x200"
+    "image": "src/assets/spaghetti.jpg",
+    "ingredients": ["200g spaghetti", "100g pancetta", "2 eggs", "50g parmesan", "Black pepper"],
+    "instructions": [
+      "Boil pasta in salted water.",
+      "Fry pancetta until crispy.",
+      "Whisk eggs and parmesan together.",
+      "Drain pasta and mix with pancetta and egg mixture.",
+      "Serve immediately with extra parmesan and black pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/300x200"
+    "image": "src/assets/chicken.jpg",
+    "ingredients": ["500g chicken", "200ml yogurt", "2 tsp garam masala", "1 onion", "400g tomato puree"],
+    "instructions": [
+      "Marinate chicken in yogurt and spices for 2 hours.",
+      "Grill or pan-fry chicken until cooked.",
+      "Sauté onions and spices, add tomato puree.",
+      "Add chicken to the sauce and simmer for 15 minutes.",
+      "Serve with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Avocado Toast",
     "summary": "Simple and healthy breakfast with mashed avocado on toasted bread.",
-    "image": "https://via.placeholder.com/300x200"
+    "image": "src/assets/avocado .jpg",
+    "ingredients": ["2 slices of bread", "1 ripe avocado", "Salt", "Pepper", "Lemon juice", "Chili flakes"],
+    "instructions": [
+      "Toast the bread slices until golden brown.",
+      "Mash the avocado with salt, pepper, and lemon juice.",
+      "Spread the mashed avocado over the toast.",
+      "Sprinkle chili flakes on top.",
+      "Serve immediately."
+    ]
   },
   {
     "id": 4,
     "title": "Beef Stroganoff",
     "summary": "Tender strips of beef cooked in a creamy mushroom sauce served with rice or noodles.",
-    "image": "https://via.placeholder.com/300x200"
+    "image": "src/assets/beef.jpg",
+    "ingredients": ["400g beef strips", "200g mushrooms", "1 onion", "200ml sour cream", "2 tbsp flour", "2 tbsp butter"],
+    "instructions": [
+      "Sauté onions and mushrooms in butter until soft.",
+      "Add beef strips and cook until browned.",
+      "Sprinkle flour and stir to thicken.",
+      "Add sour cream and simmer gently for 5 minutes.",
+      "Serve over cooked rice or noodles."
+    ]
   }
 ]
