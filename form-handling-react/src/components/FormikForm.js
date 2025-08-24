@@ -1,32 +1,33 @@
+// src/components/formikForm.js
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Username is required"),
-  email: Yup.string().email("Invalid email").required("Email is required"),
+  email: Yup.string().email("Invalid email format").required("Email is required"),
   password: Yup.string().required("Password is required"),
 });
 
 const FormikForm = () => {
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md mt-10">
-      <h2 className="text-2xl font-bold mb-4">User Registration (Formik)</h2>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <Formik
         initialValues={{ username: "", email: "", password: "" }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          alert("Form submitted successfully with Formik!");
-          console.log(values);
+          console.log("Form submitted:", values);
         }}
       >
         {() => (
-          <Form className="space-y-4">
-            <div>
-              <label className="block mb-1 font-medium">Username</label>
+          <Form className="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+            <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
+
+            <div className="mb-4">
+              <label className="block text-gray-700">Username</label>
               <Field
                 type="text"
                 name="username"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <ErrorMessage
                 name="username"
@@ -35,12 +36,12 @@ const FormikForm = () => {
               />
             </div>
 
-            <div>
-              <label className="block mb-1 font-medium">Email</label>
+            <div className="mb-4">
+              <label className="block text-gray-700">Email</label>
               <Field
                 type="email"
                 name="email"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <ErrorMessage
                 name="email"
@@ -49,12 +50,12 @@ const FormikForm = () => {
               />
             </div>
 
-            <div>
-              <label className="block mb-1 font-medium">Password</label>
+            <div className="mb-4">
+              <label className="block text-gray-700">Password</label>
               <Field
                 type="password"
                 name="password"
-                className="w-full border px-3 py-2 rounded"
+                className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
               <ErrorMessage
                 name="password"
@@ -63,7 +64,10 @@ const FormikForm = () => {
               />
             </div>
 
-            <button type="submit" className="w-full bg-green-500 text-white py-2 rounded">
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition"
+            >
               Register
             </button>
           </Form>
