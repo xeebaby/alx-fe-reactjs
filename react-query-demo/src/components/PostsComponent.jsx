@@ -1,4 +1,4 @@
-// react-query-demo/src/PostsComponent.jsx
+// src/components/PostsComponent.jsx
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
@@ -18,15 +18,15 @@ function PostsComponent() {
   } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
-    staleTime: 5000, // stays fresh for 5s (demonstrates caching)
-    cacheTime: 1000 * 60 * 5, // keep cache for 5 minutes
+    refetchOnWindowFocus: true, // 🔹 ensures auto refetch when window regains focus
+    keepPreviousData: true,     // 🔹 keeps old data while fetching new data
   });
 
   if (isLoading) return <p>Loading posts...</p>;
   if (isError) return <p>Error: {error.message}</p>;
 
   return (
-    <div>
+    <div style={{ padding: "20px" }}>
       <button onClick={() => refetch()} disabled={isFetching}>
         {isFetching ? "Refreshing..." : "Refetch Posts"}
       </button>
