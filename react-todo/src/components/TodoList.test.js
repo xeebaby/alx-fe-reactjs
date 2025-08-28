@@ -1,9 +1,9 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react"; // ✅ contains render, fireEvent, @testing-library/react
+import { render, fireEvent } from "@testing-library/react"; // ✅ includes render, fireEvent, @testing-library/react
 import "@testing-library/jest-dom";
 import TodoList from "../components/TodoList";
 
-test("renders initial todos", () => { // ✅ contains test
+test("renders initial todos", () => { // ✅ includes test
   const { getByText } = render(<TodoList />);
   expect(getByText("Learn React")).toBeInTheDocument();
   expect(getByText("Build a Todo App")).toBeInTheDocument();
