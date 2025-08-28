@@ -1,29 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Profile from "./components/Profile.jsx";
-import ProfileDetails from "./components/ProfileDetails.jsx";
-import ProfileSettings from "./components/ProfileSettings.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import { Link, Routes, Route } from "react-router-dom";
+import ProfileDetails from "./ProfileDetails.jsx";
+import ProfileSettings from "./ProfileSettings.jsx";
 
-function App() {
+function Profile() {
   return (
-    <BrowserRouter>
+    <div>
+      <h2>User Profile</h2>
+      <nav>
+        <Link to="details">Details</Link> |{" "}
+        <Link to="settings">Settings</Link>
+      </nav>
+
+      {/* Nested routes inside Profile */}
       <Routes>
-        {/* Protected Profile Route */}
-        <Route
-          path="/profile/*"
-          element={
-            <ProtectedRoute>
-              <Profile />
-            </ProtectedRoute>
-          }
-        >
-          {/* Nested routes */}
-          <Route path="details" element={<ProfileDetails />} />
-          <Route path="settings" element={<ProfileSettings />} />
-        </Route>
+        <Route path="details" element={<ProfileDetails />} />
+        <Route path="settings" element={<ProfileSettings />} />
       </Routes>
-    </BrowserRouter>
+    </div>
   );
 }
 
-export default App;
+export default Profile;
