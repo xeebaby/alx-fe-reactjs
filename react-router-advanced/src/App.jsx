@@ -1,23 +1,33 @@
-import { Link, Routes, Route } from "react-router-dom";
-import ProfileDetails from "./ProfileDetails.jsx";
-import ProfileSettings from "./ProfileSettings.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home.jsx";
+import Profile from "./components/Profile.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import BlogPost from "./components/BlogPost.jsx"; // ✅ dynamic route component
 
-function Profile() {
+function App() {
   return (
-    <div>
-      <h2>User Profile</h2>
-      <nav>
-        <Link to="details">Details</Link> |{" "}
-        <Link to="settings">Settings</Link>
-      </nav>
+    <BrowserRouter>
+      <div>
+        <h1>React Router Advanced Example</h1>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          
+          {/* Protected Profile route */}
+          <Route
+            path="/profile/*"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
 
-      {/* Nested routes inside Profile */}
-      <Routes>
-        <Route path="details" element={<ProfileDetails />} />
-        <Route path="settings" element={<ProfileSettings />} />
-      </Routes>
-    </div>
+          {/* ✅ Dynamic route for blog */}
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default Profile;
+export default App;
